@@ -26,9 +26,9 @@ Build descriptions are set in the yaml file [builds.yaml](builds.yaml).
 The program ([build_system.py](build_system.py)) loads [tasks.yaml](tasks.yaml) and [build.yaml](build.yaml), which contain `tasks` and `builds`, respectively, and further operates with them. By default, the path to the files is considered **the current working directory**.
 
 ### Command `list`
-The `list` command with the `builds` and `tasks` arguments to view the names of uploaded `builds` and `tasks`, respectively.
+The `list` command supports the `builds` and `tasks` arguments to view the names of uploaded `builds` and `tasks`, respectively.
 
-Examples:
+Example:
 ```
 python build_system.py list builds
 ```
@@ -38,4 +38,24 @@ List of available builds:
  * approach_important
  * audience_stand
  * time_alone
+```
+
+### Command `get`
+The `get` command supports the arguments `build <build_name>` and `task <task_name>` to get detailed information.
+
+Example:
+```
+python build_system.py get task write_lime_leprechauns
+```
+Output:
+```
+Task info:
+ * name: write_lime_leprechauns
+ * dependencies: upgrade_olive_leprechauns, write_aqua_leprechauns
+```
+
+## How to test
+This build system has already been tested, the test file is: [test_build_system.py](test_build_system.py). You can test the program yourself with the command:
+```
+python -m unittest test_build_system.py
 ```
