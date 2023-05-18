@@ -55,7 +55,24 @@ Task info:
 ```
 
 ## How to test
-This build system has already been tested, the test file is: [test_build_system.py](test_build_system.py). You can test the program yourself with the command:
+This build system has already been tested, the test file is: [test_build_system.py](test_build_system.py).
+
+You can test the program yourself with the command:
 ```
-python -m unittest test_build_system.py
+python -m coverage run -m unittest
 ```
+
+Show coverage report:
+```
+python -m coverage report
+```
+Output:
+```
+Name                   Stmts   Miss  Cover
+------------------------------------------
+build_system.py           79     14    82%
+test_build_system.py      49      0   100%
+------------------------------------------
+TOTAL                    128     14    89%
+```
+
